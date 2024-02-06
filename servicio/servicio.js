@@ -2,23 +2,27 @@ import Persistencia from "../persistencia/capaPersistencia.js";
 
 class Servicio {
     constructor() {
-        this.peristencia = new Persistencia()
+        this.persistencia = new Persistencia()
     }
 
     obtenerString() {
-        let datos = this.peristencia.obtenerDatos()
-        let res = ""
-        
-        datos.map((dato) => {
-            res += dato.palabra
-            res += " "
-        })
-
-        return res
+        const colores = this.persistencia.obtenerDatos()
+        const arrayColores= colores.map((obj) => obj.color);
+        return arrayColores
     }
 
-    agregarPalabra(palabra) {
-        var res = this.peristencia.agregarPalabra(palabra)
+    principal (){
+        let a= this.persistencia.principal()
+        return a
+    }
+
+    hora (){
+        let msj= this.persistencia.hora()
+        return msj
+    }
+
+    agregarColor(color) {
+        var res = this.persistencia.agregarColor(color)
         return res
     }
 }

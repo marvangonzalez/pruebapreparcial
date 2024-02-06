@@ -8,8 +8,10 @@ class RouterServicios {
     }
 
     start () {
-        this.router.get('/:numero', this.controlador.agregarPalabra)
-        this.router.get('/entrada', this.controlador.getNumeros)
+        this.router.get('/', this.controlador.hora)
+        this.router.post('/colores', this.controlador.agregarColor)
+        this.router.get('/colores', this.controlador.getColores)
+        
 
         return this.router
     }

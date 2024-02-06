@@ -10,5 +10,5 @@ app.use(express.urlencoded({extended: true}))
 app.use('/parcial/numeros', new RouterServicios().start())
 
 const PORT = 8080
-const server = app.listen(PORT, () => console.log(`Servidor express escuchando en http://localhost:${PORT}`))
+const server = app.listen(PORT, () => console.log(`Servidor express escuchando en http://localhost:${PORT}/parcial/numeros/`))
 server.on('error', error => console.log(`Error en servidor: ${error.message}`))

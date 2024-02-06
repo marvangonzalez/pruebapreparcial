@@ -1,22 +1,40 @@
 class Persistencia {
     constructor () {
-        this.datos = [
-                { id: 1, palabra: "Hola", timestamp: 1624450180112 },
-                { id: 2, palabra: "que", timestamp: 1624450189685 },
-                { id: 3, palabra: "tal", timestamp: 1624450195068 }
+        this.datos = [{ id: 1, color: "rojo"},
+        { id: 2, color: "azul"},
+        { id: 3, color: "verde"}
             ]
     }
 
     obtenerDatos = () => {
         return this.datos
+    }
+
+    principal = () => {
+        return "Bienvenido"
+    }
+
+    hora = () => {
+        const currentHour = new Date().getHours();
+        let msj
+
+    if (currentHour >= 6 && currentHour < 12) {
+        msj= 'Buenos días!';
+    } else if (currentHour >= 12 && currentHour < 20) {
+        msj= 'Buenas tardes!';
+    } else {
+        msj= 'Buenas noches!';
+    }
+        return msj
 
     }
 
-    agregarPalabra = palabra => {
+    agregarColor = color => {
+        
+        console.log("string" , color)
         let dato = {
             id: this.datos.length,
-            palabra: palabra,
-            timestamp: Date.now()
+            color: color
         }
         this.datos.push(dato)
 
